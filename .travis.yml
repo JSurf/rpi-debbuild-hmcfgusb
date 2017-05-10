@@ -1,14 +1,18 @@
 sudo: required
+
 services:
   - docker
+  
 install:
   - docker run --rm --privileged multiarch/qemu-user-static:register --reset
+  
 script:
   - chmod 755 ./build.sh
-  - docker run --rm $DOCKER_IMAGE_NAME ls -l;cat build.sh;${PWD}/build.sh
-  #/build/build.sh
+  - docker run --rm $DOCKER_IMAGE_NAME ${PWD}/build.sh
+  
 env:
   - DOCKER_IMAGE_NAME=jsurf/rpi-raspbian-build-essentials:latest
+  
 deploy:
   provider: packagecloud
   repository: raspbian
