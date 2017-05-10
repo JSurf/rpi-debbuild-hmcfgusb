@@ -10,7 +10,7 @@ script:
   - mkdir build
   - chmod 777 build
   - chmod 755 ./build.sh
-  - docker run --rm -v ${PWD}/build.sh:/tmp/build.sh -v ${PWD}/build:/build DOCKER_IMAGE_NAME /tmp/build.sh
+  - docker run --rm -v ${PWD}/build.sh:/tmp/build.sh -v ${PWD}/build:/build $DOCKER_IMAGE_NAME /tmp/build.sh
   
 env:
   - DOCKER_IMAGE_NAME=jsurf/rpi-raspbian-build-essentials:latest
