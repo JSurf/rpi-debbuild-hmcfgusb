@@ -4,11 +4,11 @@ services:
   - docker
   
 install:
-  - sudo docker run --rm --privileged multiarch/qemu-user-static:register --reset
+  - docker run --rm --privileged multiarch/qemu-user-static:register --reset
   
 script:
   - chmod 755 ./build.sh
-  - sudo docker run --rm $DOCKER_IMAGE_NAME sleep 2;cat build.sh;${PWD}/build.sh
+  - docker run -u 0 --rm $DOCKER_IMAGE_NAME sleep 2;cat build.sh;${PWD}/build.sh
   
 env:
   - DOCKER_IMAGE_NAME=jsurf/rpi-raspbian-build-essentials:latest
