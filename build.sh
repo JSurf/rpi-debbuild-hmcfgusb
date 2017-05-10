@@ -6,6 +6,3 @@ git clone https://git.zerfleddert.de/git/hmcfgusb
 cd hmcfgusb
 mk-build-deps -i
 dpkg-buildpackage -b -rfakeroot -us -uc
-ls -l /build
-ls -l /build/hmcfgusb
-ls -l /
