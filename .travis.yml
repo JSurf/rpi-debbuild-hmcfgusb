@@ -8,7 +8,7 @@ install:
   
 script:
   - chmod 755 ./build.sh
-  - docker run --rm $DOCKER_IMAGE_NAME sleep 2; cat build.sh;${PWD}/build.sh
+  - docker run --rm $DOCKER_IMAGE_NAME sleep 2;cat build.sh;${PWD}/build.sh
   
 env:
   - DOCKER_IMAGE_NAME=jsurf/rpi-raspbian-build-essentials:latest
