@@ -8,4 +8,4 @@ mk-build-deps -i
 dpkg-buildpackage -b -rfakeroot -us -uc
 ls -l /build
 ls -l /build/hmcfgusb
-
+ls -l /
