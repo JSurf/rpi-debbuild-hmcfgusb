@@ -5,7 +5,8 @@ install:
   - docker run --rm --privileged multiarch/qemu-user-static:register --reset
 script:
   - chmod 755 ./build.sh
-  - docker run --rm -v ${PWD}:/build $DOCKER_IMAGE_NAME /build/build.sh
+  - docker run --rm -v ${PWD}:/build $DOCKER_IMAGE_NAME ls -l /;ls -l build
+  #/build/build.sh
 env:
   - DOCKER_IMAGE_NAME=jsurf/rpi-raspbian-build-essentials:latest
 deploy:
